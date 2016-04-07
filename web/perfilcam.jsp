@@ -97,7 +97,7 @@ out.println("</script>");
 
 <br>
 <br>
-<form method="post" action="camper">
+<form method="post" action="camperu">
     Nombre empleado <input type="text" value="<%=nom%>" name="nome" required>
     <br><br>
     Compañia     <input type="text" value="<%=compa%>" name="compa" required readonly>
