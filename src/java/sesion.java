@@ -119,7 +119,7 @@ response.sendRedirect("http://localhost:8080/SYC/faces/Usuario.jsp");
                  
        
          sesion.setAttribute("NombreEmpleado", nom);
-         sesion.setAttribute("tipo", tipo);
+         sesion.setAttribute("usu", tipo);
          sesion.setAttribute("compa", compa);
          sesion.setAttribute("edad", edad);
          sesion.setAttribute("sexo", sexo);
