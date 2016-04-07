@@ -199,7 +199,7 @@ String costo = (String)session.getAttribute("costo");
 <br>
 </center>
 <center>
-    <h1>Informe</h1>
+    <h1>Notas</h1>
     <table> <tr> <td> <%=informe%>  </td> </tr>  </table>  
          </center></div>
         </div>
@@ -234,7 +234,7 @@ Connection connectionBD = null;
                     
         %>
 
-<center><a href="view_file.jsp?id=<%out.print(rs.getString("idarchivo"));%>" target="_blank">View</a></center>
+<center><a href="view_file.jsp?id=<%out.print(rs.getString("idarchivo"));%>" target="_blank">Ver informe PDF</a></center>
                         <script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
