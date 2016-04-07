@@ -2,7 +2,15 @@
 <html>
     <head>
         <title>Saving Your Car</title>
-        <script type="text/javascript">
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main_1.css" />
+                <link rel="stylesheet" href="dist/sweetalert.css" type="text/css">
+                <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script>
 
 window.onunload = sale;
 var valor;
@@ -26,8 +34,72 @@ if(document.cookie){
 }
 function sale(){
 	document.cookie ="recarga=sip"
+        
+        
+        
 }
+$(function() {
+    $( "#vipoliza" ).datepicker({ 
+    dateFormat: "mm/dd/yy",
+    defaultDate: "01/01/2016",
+    minDate: "01/01/1925",
+    maxDate: "12/31/2020",
+    changeMonth: true,
+    changeYear: true,
+    yearRange: "1925:2020",
+    onClose: function(dateText, inst) {
+        var validDate = $.datepicker.formatDate( "mm/dd/yy", $('#vipoliza').datepicker('getDate'));
+            $('#vipoliza').datepicker('setDate', validDate);
+        }
+    });
+});
+$(function() {
+    $( "#fesi" ).datepicker({ 
+    dateFormat: "mm/dd/yy",
+    defaultDate: "01/01/2016",
+    minDate: "01/01/1925",
+    maxDate: "12/31/2020",
+    changeMonth: true,
+    changeYear: true,
+    yearRange: "1925:2020",
+    onClose: function(dateText, inst) {
+        var validDate = $.datepicker.formatDate( "mm/dd/yy", $('#fesi').datepicker('getDate'));
+            $('#fesi').datepicker('setDate', validDate);
+        }
+    });
+});
+$(function() {
+    $( "#feap" ).datepicker({ 
+    dateFormat: "mm/dd/yy",
+    defaultDate: "01/01/2016",
+    minDate: "01/01/1925",
+    maxDate: "12/31/2020",
+    changeMonth: true,
+    changeYear: true,
+    yearRange: "1925:2020",
+    onClose: function(dateText, inst) {
+        var validDate = $.datepicker.formatDate( "mm/dd/yy", $('#feap').datepicker('getDate'));
+            $('#feap').datepicker('setDate', validDate);
+        }
+    });
+});
+$(function() {
+    $( "#feclau" ).datepicker({ 
+    dateFormat: "mm/dd/yy",
+    defaultDate: "01/01/2016",
+    minDate: "01/01/1925",
+    maxDate: "12/31/2020",
+    changeMonth: true,
+    changeYear: true,
+    yearRange: "1925:2020",
+    onClose: function(dateText, inst) {
+        var validDate = $.datepicker.formatDate( "mm/dd/yy", $('#feclau').datepicker('getDate'));
+            $('#feclau').datepicker('setDate', validDate);
+        }
+    });
+});
 </script>
+
   
 <script type="text/javascript">
                   
@@ -163,33 +235,22 @@ String costo = (String)session.getAttribute("costo");
                          Nombre del asegurado   <input type="text" name="asegurado" id="asegurado" value="<%=asegurado%>" placeholder="Asegurado" required/><br>
                          Poliza   <input type="text" name="poliza" id="poliza" value="<%=poliza%>" placeholder="P&oacute;liza" required/><br>
                             <div><h3>Vigencia de la Poliza</h3></div><div disabled>
-                                Recuerde llenarlo con el formato dd:mm:yyyy<br>
-                <input type="text" maxlength="8" size="8" name="vipoliza1" value="<%=vigenciapol%>" onKeyPress="return validacp(event)" id="vipoliza1" value="" placeholder="dd" required/>
-<br>
+                                <input type="text" name="vipoliza" value="<%=vigenciapol%>" id="vipoliza" required>
                              
                              </div>
                             <div><h3>Fecha del Siniestro</h3></div><div disabled>
-                                  Recuerde llenarlo con el formato dd:mm:yyyy<br>
-                             <input type="text" maxlength="8" size="8" name="fesi1" onKeyPress="return validacp(event)"  id="fesi1" value="<%=fechaSiniestro%>" placeholder="dd" required/>
-                             
-                             
+                             <input type="text" name="fesi" value="<%=fechaSiniestro%>" id="fesi" required>
                              
                              </div>
                             <div><h3>Fecha de Apertura del Caso</h3></div><div disabled>
-                                  Recuerde llenarlo con el formato dd:mm:yyyy<br>
-                             <input type="text" maxlength="8" size="8" name="feap1" onKeyPress="return validacp(event)" id="feap1" value="<%=fechaapertura%>" placeholder="dd"required/>
-                             
+                             <input type="text" name="feap" value="<%=fechaapertura%>" id="feap" required>
                              
                              </div>
                             
                             <div><h3>Fecha de Clausura del caso</h3></div><div disabled>
-                                Recuerde llenarlo con el formato dd:mm:yyyy<br>
-                             <input type="text" maxlength="8" size="8" name="feclau1" onKeyPress="return validacp(event)"  id="feclau1"  value="<%=fechaclausura%>" placeholder="dd" required/>
-                            
+                            <input type="text" name="feclau" value="<%=fechaclausura%>" id="feclau" required>
                              <br><br>
-   
-                             <input type="text" name="info" id="info" value="<%=informe%>" placeholder="Informe"/><br>
-                             <br><br>
+                             <input type="text" name="info" id="info" value="<%=informe%>" placeholder="Notas del informe"/><br>
                              </div>
                                  <h4>Coloque la informacion de su correo</h4>
                                  <input type="email" name="correo2" placeholder="Correo Admimistrador"  required>
