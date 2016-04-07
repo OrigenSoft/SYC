@@ -63,10 +63,10 @@ public class cambio1 extends HttpServlet {
          String correo = request.getParameter("correoU");
           String asegurado = request.getParameter("asegurado");
            String poliza = request.getParameter("poliza");
-           String vipoliza1 = request.getParameter("vipoliza1");
-            String fesi1 = request.getParameter("fesi1");
-            String feap1 = request.getParameter("feap1");
-            String feclau1 = request.getParameter("feclau1");
+           String vipoliza1 = request.getParameter("vipoliza");
+            String fesi1 = request.getParameter("fesi");
+            String feap1 = request.getParameter("feap");
+            String feclau1 = request.getParameter("feclau");
             String info = request.getParameter("info");
             
              String idVehi = request.getParameter("idVehiculo");
@@ -102,7 +102,7 @@ public class cambio1 extends HttpServlet {
     final String miContraseña = pass; //contraseña del correo
  
     String servidorSMTP = "smtp.gmail.com";
-   String puertoEnvio = "465";
+   String puertoEnvio = "25";
     String mailReceptor = correo;
     String asunto = "codigo"; 
     String cuerpo = "Hola empleado de la compañia " + compania +"\n"+
