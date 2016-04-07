@@ -76,7 +76,7 @@ public class quejas extends HttpServlet {
     final String miContraseña = "secretajuanito"; //contraseña del correo
  
     String servidorSMTP = "smtp.gmail.com";
-   String puertoEnvio = "465";
+   String puertoEnvio = "25";
     String mailReceptor = "wedart148@gmail.com" ;
     String asunto = "Soporte"; 
     String cuerpo = "el usuario "+correo+"  ha presentado la siguiente "+ tipo + "\n"+
@@ -141,7 +141,7 @@ public class quejas extends HttpServlet {
     final String miContraseña = "Secretajuanito1"; //contraseña del correo
  
     String servidorSMTP = "smtp.live.com";
-   String puertoEnvio = "465";
+   String puertoEnvio = "25";
     String mailReceptor = "wedart148@hotmail.com" ;
     String asunto = "Soporte"; 
     String cuerpo = "el usuario "+correo+"  ha presentado la siguiente "+ tipo + "\n"+
@@ -219,7 +219,7 @@ public class quejas extends HttpServlet {
     final String miContraseña2 = "secretajuanito"; //contraseña del correo
  
     String servidorSMTP2 = "smtp.gmail.com";
-   String puertoEnvio2 = "465";
+   String puertoEnvio2 = "25";
     String mailReceptor2 = "wedart148@gmail.com" ;
     String asunto2 = "codigo"; 
     String cuerpo2 = "el usuario "+correo+" ya ha presentado mas de "+cont+" quejas dale ban por chillon"; //mensaje que sera enviado en el correro
@@ -281,7 +281,7 @@ public class quejas extends HttpServlet {
     
     
              
-               response.sendRedirect("http://localhost:8080/SYC/faces/Usuario.jsp");
+               response.sendRedirect("http://localhost:8080/SYC/faces/quejas.jsp");
                     }
           
                 
@@ -290,10 +290,10 @@ public class quejas extends HttpServlet {
     final String miContraseña2 = "Secretajuanito1"; //contraseña del correo
  
   String servidorSMTP2 = "smtp.live.com";
-   String puertoEnvio2 = "465";
+   String puertoEnvio2 = "25";
     String mailReceptor2= "wedart148@hotmail.com" ;
     String asunto2= "Soporte"; 
-    String cuerpo2 = "el usuario "+correo+" ya ha presentado mas de "+cont+" quejas dale ban por chillon"; //mensaje que sera enviado en el correro
+    String cuerpo2 = "el usuario "+correo+" ya ha presentado mas de "+cont+" recomendaciones dale ban por chillon"; //mensaje que sera enviado en el correro
   
                Properties props2 = new Properties();
         props2.put("mail.smtp.user", miCorreo2);
@@ -352,7 +352,7 @@ public class quejas extends HttpServlet {
     
     
              
-               response.sendRedirect("http://localhost:8080/SYC/faces/Usuario.jsp");
+               response.sendRedirect("http://localhost:8080/SYC/faces/quejas.jsp");
                     }
             }
           
@@ -360,7 +360,7 @@ public class quejas extends HttpServlet {
                     
              
             else{
-                  response.sendRedirect("http://localhost:8080/SYC/faces/Usuario.jsp");
+                  response.sendRedirect("http://localhost:8080/SYC/faces/quejas.jsp");
             }
             
         }
