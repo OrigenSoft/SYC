@@ -49,9 +49,9 @@ String sexo = (String)session.getAttribute("sexo");
 String correo = (String)session.getAttribute("correo");
 String telefono = (String)session.getAttribute("telefono");
 String contra =(String)session.getAttribute("contra");
-String tipo =(String)session.getAttribute("tipo");
+String tipo =(String)session.getAttribute("usu");
 
-if(nom==null){
+if(tipo==null){
      response.setContentType("text/html");  
                out.println("<head>");
                 out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
@@ -127,7 +127,7 @@ out.println("</script>");
                     
                     </table></center>
         </div>
-                         <form method="post" action="perfilcam.jsp">
+                         <form method="post" action="Aperfilcambios.jsp">
             
             <center>     <input type="submit" value="editar"> </center>
         </form>
