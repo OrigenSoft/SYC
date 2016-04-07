@@ -46,10 +46,9 @@ function sale(){
                       <%
                           
                           
-                          
-                          
-String nom = (String)session.getAttribute("NombreEmpleado");
-String compa = (String)session.getAttribute("compa");
+
+String nom = (String)session.getAttribute("usu");
+String compa = (String)session.getAttribute("nomb");
 if(nom==null){
      response.setContentType("text/html");  
                out.println("<head>");
@@ -70,6 +69,8 @@ if(nom==null){
 "});"); 
 out.println("</script>"); 
 }
+
+%>
 
 %>
    <body style="background-image:images/car.jpg ">
@@ -102,6 +103,7 @@ out.println("</script>");
                                                                 
                                                            <input type="submit" value= "logout" >     
                                                             </form> </span></li>
+                                                        <li><a href="quejas2.jsp">Queja o sugerencia</a></li>
 						</ul>
 					</nav>
 				</header>
