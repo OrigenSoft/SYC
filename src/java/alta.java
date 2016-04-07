@@ -51,6 +51,7 @@ public class alta extends HttpServlet {
              String telefono = request.getParameter("telefono");
               String codsec = request.getParameter("codsec");
                String contrasenia = request.getParameter("contrasenia");
+               String tipo="usuario";
                int edad2=Integer.parseInt(edad);
                int telefono2=Integer.parseInt(telefono);
                
@@ -149,7 +150,7 @@ out.println("</script>");
 out.println("</script>"); 
             
       
-            int resu=  sql.executeUpdate("insert into Usuario values('"+compania+"','"+nom+"','"+edad2+"','"+sexo+"','"+correo+"','"+telefono2+"','"+codsec+"','"+contr2+"')");
+            int resu=  sql.executeUpdate("insert into Usuario values('"+compania+"','"+nom+"','"+edad2+"','"+sexo+"','"+correo+"','"+telefono2+"','"+codsec+"','"+contr2+"','"+tipo+"')");
           if(resu==1){
                response.sendRedirect("http://localhost:8080/SYC/faces/index.html");
           }
