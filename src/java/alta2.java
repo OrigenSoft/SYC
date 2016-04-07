@@ -37,8 +37,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import org.apache.commons.fileupload.*;
 import org.apache.commons.io.*;
-@WebServlet ( "/ Upload")
-@MultipartConfig
+
 
 
 
@@ -166,13 +165,13 @@ public class alta2 extends HttpServlet {
            
             conn1= DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
            
-            pstatement1=conn1.prepareStatement("insert into archivos values(?,?,?,?)");
+            pstatement1=conn1.prepareStatement("insert into archivos values(?,?,?)");
            
-            pstatement1.setString(1, idar);
-            pstatement1.setString(2, nomar);
-            pstatement1.setBinaryStream(3, inputStream, (int) filePart.getSize());
+            pstatement1.setInt(1, idsin2);
+           
+            pstatement1.setBinaryStream(2, inputStream, (int) filePart.getSize());
             
-            pstatement1.setInt(4, idsin2);
+            pstatement1.setInt(3, idsin2);
             
            
             pstatement1.executeUpdate();
