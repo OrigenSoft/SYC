@@ -52,7 +52,7 @@ public class camper extends HttpServlet {
             String correo = request.getParameter("correo");
              String telefono = request.getParameter("tel");
                String contr = request.getParameter("con");
-               String tipo = (String) request.getSession().getAttribute("tipo");
+               String tipo = (String) request.getSession().getAttribute("usu");
                
                int edad2=Integer.parseInt(edad);
                int telefono2=Integer.parseInt(telefono);
@@ -93,11 +93,12 @@ public class camper extends HttpServlet {
             
             int resu=  sql.executeUpdate("UPDATE Usuario SET "+"NombreEmpleado='"+nom+"',edad='"+edad2+"',telefono='"+telefono2+"',contraseña='"+contr2+"' WHERE correo='"+correo+"';");
           if(resu==1){
-              if(tipo.equals("usuario")){
-               response.sendRedirect("http://localhost:8080/SYC/faces/Usuario.jsp");
+              if(tipo.equals("administrador")){
+              response.sendRedirect("http://localhost:8080/SYC/faces/principal.jsp");
                }
               else{
-                  response.sendRedirect("http://localhost:8080/SYC/faces/principal.jsp");
+                  
+                   response.sendRedirect("http://localhost:8080/SYC/faces/Usuario.jsp");
               }
             
             
