@@ -84,7 +84,7 @@ public class recupera extends HttpServlet {
     final String miContraseña = "secretajuanito"; //contraseña del correo
  
     String servidorSMTP = "smtp.gmail.com";
-   String puertoEnvio = "465";
+   String puertoEnvio = "25";
     String mailReceptor = usu;
     String asunto = "codigo"; 
     String cuerpo = "Esta es tu nueva contraseña:"+pass+"   te recomendamos cambiar lo mas pronto posible tu contraseña"; //mensaje que sera enviado en el correro
