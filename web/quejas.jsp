@@ -1,7 +1,5 @@
 <%-- 
-    Document   : quejas
-    Created on : 2/04/2016, 07:12:34 PM
-    Author     : coro
+    
 --%>
 
 <html>
