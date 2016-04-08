@@ -86,13 +86,13 @@ public class cambio1 extends HttpServlet {
    try (PrintWriter out = response.getWriter()) {
 
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             int resu=  sql.executeUpdate("UPDATE Vehiculo SET "+"NombreVehiculo='"+nomVehi+"',marca='"+mar+"',modelo='"+mod+"',placas='"+plac+"',numeroSerie='"+nose+"',numeroMotor='"+nomo+"',costo='"+cos2+"'WHERE IdVehiculo="+idVehi2+";");
            out.println("hola");
           if(resu==1){
               Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
            int resu2=sql.executeUpdate("UPDATE  Siniestro SET "+"asegurado='"+asegurado+"',poliza='"+poliza+"',vigenciaPoliza='"+vipoliza1+"',fechaSiniestro='"+fesi1+"',fechaAperturaCaso='"+feap1+"',fechaClausuraCaso='"+feclau1+"',Informe='"+info+"'WHERE IdSiniestro="+idsin2+";");
            if (resu2==1)

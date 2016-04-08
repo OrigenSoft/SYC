@@ -82,7 +82,7 @@ out.println("</script>");
               if (ide!=null && !ide.isEmpty()){
               
               Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             ResultSet result3 = sql.executeQuery("select * from archivos where Idsiniestro ='"+ide+"'") ;
           if(result3.next()){
@@ -93,7 +93,7 @@ out.println("</script>");
                       
                            
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             ResultSet result = sql.executeQuery("select * from Siniestro where IdSiniestro ='"+ide+"'") ;
             
@@ -127,7 +127,7 @@ out.println("</script>");
                             
                             
          Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             ResultSet result2 = sql.executeQuery("select * from Vehiculo where IdVehiculo ='"+IdVehiculo+"'");
             

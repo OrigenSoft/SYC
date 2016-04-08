@@ -46,7 +46,7 @@ public class sservlet extends HttpServlet {
             
            
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             ResultSet result = sql.executeQuery("select * from Siniestro where IdSiniestro ='"+nombre+"' and Compania='"+compa+"'");
             
@@ -80,7 +80,7 @@ public class sservlet extends HttpServlet {
                             
                             
          Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             ResultSet result2 = sql.executeQuery("select * from Vehiculo where IdVehiculo ='"+IdVehiculo+"'");
             

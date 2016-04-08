@@ -67,7 +67,7 @@ public class camper extends HttpServlet {
                      Connection connectionBD = null;
         Statement sql ;
         Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             ResultSet result3 = sql.executeQuery("select * from usuario where correo ='"+correo+"'") ;
           if(result3.next()){
@@ -104,7 +104,7 @@ public class camper extends HttpServlet {
         
      
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             out.println("hola");
             

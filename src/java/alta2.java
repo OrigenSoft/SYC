@@ -176,20 +176,20 @@ public class alta2 extends HttpServlet {
 //             out.println(feclau3);
 //             out.println(info);
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             int resu=  sql.executeUpdate("insert into Vehiculo values('"+idVehi2+"','"+nomVehi+"','"+mar+"','"+mod+"','"+plac+"','"+nose+"','"+nomo+"','"+cos2+"')");
            out.println("hola");
           if(resu==1){
               Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
            int resu2=sql.executeUpdate("insert into siniestro values('"+idsin2+"','"+compania+"','"+correo+"','"+idVehi2+"','"+asegurado+"','"+poliza+"','"+vipoliza+"','"+fesi+"','"+feap+"','"+feclau+"','"+info+"')");
            if (resu2==1) {
                
           
               // Class.forName("com.mysql.jdbc.Driver");
-            //connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            //connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             //sql = connectionBD.createStatement();
            //int resu3=sql.executeUpdate("insert into archivos values('"+idar+"','"+nomar+"','"+inputStream+"','"+idsin2+"')");
            
@@ -198,7 +198,7 @@ public class alta2 extends HttpServlet {
             //variable para la conexion
             Connection conn1=null;
            
-            conn1= DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            conn1= DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
            
             pstatement1=conn1.prepareStatement("insert into archivos values(?,?,?)");
            

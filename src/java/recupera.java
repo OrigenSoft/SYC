@@ -73,7 +73,7 @@ public class recupera extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
         
         Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             
             //int resu=  sql.executeUpdate("UPDATE Usuario SET "+"contraseña='"+pass+"'WHERE correo="+usu+";");

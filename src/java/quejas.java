@@ -66,7 +66,7 @@ public class quejas extends HttpServlet {
    
 
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             int resu=  sql.executeUpdate("insert into quejas (tipo, definicion, correo) values('"+tipo+"','"+descripcion+"','"+correo+"')");
             if(resu==1){
@@ -208,7 +208,7 @@ public class quejas extends HttpServlet {
                 response.sendRedirect("http://localhost:8080/SYC/faces/quejas.jsp");
                 
                 Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             ResultSet result = sql.executeQuery("select tipo,count(*) from quejas where tipo='"+tipo+"' and correo='"+correo+"' group by tipo;");
             if (result.next()){

@@ -44,7 +44,7 @@ public class codco extends HttpServlet {
             if(ide!=null&&!ide.isEmpty()){
           
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             ResultSet result = sql.executeQuery("select * from Codigo where Compania ='"+ide+"'") ;
             
