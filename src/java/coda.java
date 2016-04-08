@@ -46,9 +46,18 @@ public class coda extends HttpServlet {
        String correo=request.getParameter("correo");
        String correo2=request.getParameter("correo2"); 
       String pass=request.getParameter("pass");
-        
+        boolean a,b,c,d,e;
+        a=cod!=null && !cod.isEmpty();
+        b=correo!=null && !correo.isEmpty();
+        c=correo2!=null && !correo2.isEmpty();
+        d=pass!=null && !pass.isEmpty();
+        e=compa!=null && !compa.isEmpty();
        
         try (PrintWriter out = response.getWriter()) {
+            
+            if(a&&b&&c&&d&&e){
+            
+            
            
         Connection connectionBD = null;
         Statement sql ;
@@ -58,7 +67,7 @@ public class coda extends HttpServlet {
         
         
         Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
               out.println(cod);
                 out.println(compa);
@@ -148,6 +157,27 @@ out.println("alert('el siniestro tecleado no existe');");
 out.println("</script>");
               
           }
+            }
+            else{
+                 response.setContentType("text/html");  
+               out.println("<head>");
+                out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
+                out.println("<script src=\"dist/sweetalert.min.js\"></script> <link rel=\"stylesheet\" type=\"text/css\" href=\"dist/sweetalert.css\">");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<br>");
+                out.println("<script type=\"text/javascript\">");  
+                out.println("sweetAlert({\n" +
+"    title: \"Error!\",\n" +
+"    text: \"Llene todos los campos!\",\n" +
+"    type: \"error\"\n" +
+"},\n" +
+"\n" +
+"function () {\n" +
+"    window.location.href = 'codigoalt.jsp';\n" +
+"});"); 
+out.println("</script>"); 
+            }
         }
     }
     

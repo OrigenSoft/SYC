@@ -105,7 +105,7 @@ out.println("</script>");
                     </h1>
                     
                     <form method="post" action="consulta">
-                        <input type="text" name="ide" id="ide">
+                        <input type="text" name="ide" id="ide" required>
                         <br>
                         <input type="submit" value="Buscar">
                         

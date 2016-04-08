@@ -41,9 +41,10 @@ public class codco extends HttpServlet {
    
         String ide=request.getParameter("Compania");
         try (PrintWriter out = response.getWriter()) {
+            if(ide!=null&&!ide.isEmpty()){
           
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
             ResultSet result = sql.executeQuery("select * from Codigo where Compania ='"+ide+"'") ;
             
@@ -80,7 +81,28 @@ public class codco extends HttpServlet {
 "});"); 
 out.println("</script>"); 
             }
-                }}
+                }
+            else{
+                 response.setContentType("text/html");  
+               out.println("<head>");
+                out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
+                out.println("<script src=\"dist/sweetalert.min.js\"></script> <link rel=\"stylesheet\" type=\"text/css\" href=\"dist/sweetalert.css\">");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<br>");
+                out.println("<script type=\"text/javascript\">");  
+                out.println("sweetAlert({\n" +
+"    title: \"Error!\",\n" +
+"    text: \"Llene todos los campos!\",\n" +
+"    type: \"error\"\n" +
+"},\n" +
+"\n" +
+"function () {\n" +
+"    window.location.href = 'codigocon.jsp';\n" +
+"});"); 
+out.println("</script>"); 
+            }}
+    }
     
         
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

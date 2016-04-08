@@ -104,7 +104,7 @@ public class pedf2 extends HttpServlet {
     try
     {
         Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
         out.print("conexion CTM! xD");
     }
     catch (Exception ex)

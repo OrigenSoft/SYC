@@ -53,6 +53,24 @@ public class camper extends HttpServlet {
              String telefono = request.getParameter("tel");
                String contr = request.getParameter("con");
                String tipo = (String) request.getSession().getAttribute("usu");
+               boolean a,b,c,d,z;
+               a=nom!=null&&!nom.isEmpty();
+               b=edad!=null&&!edad.isEmpty();
+               c=correo!=null&&!correo.isEmpty();
+               d=telefono!=null&&!telefono.isEmpty();
+               z=contr!=null&&!contr.isEmpty();
+               
+               try (PrintWriter out = response.getWriter()) {
+                    if(a&&b&&c&&d&&z){
+                   
+                   
+                     Connection connectionBD = null;
+        Statement sql ;
+        Class.forName("com.mysql.jdbc.Driver");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
+            sql = connectionBD.createStatement();
+            ResultSet result3 = sql.executeQuery("select * from usuario where correo ='"+correo+"'") ;
+          if(result3.next()){
                
                int edad2=Integer.parseInt(edad);
                int telefono2=Integer.parseInt(telefono);
@@ -81,13 +99,12 @@ public class camper extends HttpServlet {
   
           
     
-        Connection connectionBD = null;
-        Statement sql ;
+      
                                                      // "UPDATE mitabla SET "+ "NOMBRE='"+ nombre+ "', EDAD="+ edad+" WHERE clave=" + clave+";";
         
-     try (PrintWriter out = response.getWriter()) {
+     
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
             out.println("hola");
             
@@ -104,7 +121,49 @@ public class camper extends HttpServlet {
             
             
     }
-    }
+    }else{
+               response.setContentType("text/html");  
+               out.println("<head>");
+                out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
+                out.println("<script src=\"dist/sweetalert.min.js\"></script> <link rel=\"stylesheet\" type=\"text/css\" href=\"dist/sweetalert.css\">");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<br>");
+                out.println("<script type=\"text/javascript\">");  
+                out.println("sweetAlert({\n" +
+"    title: \"Error!\",\n" +
+"    text: \"No le quiera jugar al verga, compa!\",\n" +
+"    type: \"error\"\n" +
+"},\n" +
+"\n" +
+"function () {\n" +
+"    window.location.href = 'Aperfilcambios.jsp';\n" +
+"});"); 
+out.println("</script>"); 
+          }
+                    }
+          else{
+                        response.setContentType("text/html");  
+               out.println("<head>");
+                out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
+                out.println("<script src=\"dist/sweetalert.min.js\"></script> <link rel=\"stylesheet\" type=\"text/css\" href=\"dist/sweetalert.css\">");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<br>");
+                out.println("<script type=\"text/javascript\">");  
+                out.println("sweetAlert({\n" +
+"    title: \"Error!\",\n" +
+"    text: \"Llene todos los campos!\",\n" +
+"    type: \"error\"\n" +
+"},\n" +
+"\n" +
+"function () {\n" +
+"    window.location.href = 'Aperfilcambios.jsp';\n" +
+"});"); 
+out.println("</script>"); 
+                    }
+               }
+               
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -222,7 +222,7 @@ Connection connectionBD = null;
    
                 
                 Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
             ResultSet rs = sql.executeQuery("select * from archivos where Idsiniestro ='"+Idsiniestro+"'") ;
           if(rs.next()){

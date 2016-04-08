@@ -102,7 +102,7 @@ out.println("</script>");
     <br><br>
     Compañia     <input type="text" value="<%=compa%>" name="compa" required readonly>
     <br><br>
-    Edad  <input type="text" value="<%=edad%>" name="edad" required >
+    Edad  <input type="text" value="<%=edad%>" name="edad" maxlength="2" required >
     <br><br>
     Sexo <input type="text" value="<%=sexo%>" name="sex" required readonly>
     <br><br>

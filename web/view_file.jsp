@@ -24,7 +24,7 @@ Connection connectionBD = null;
             try
             {    
                 Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
             ResultSet result3 = sql.executeQuery("select * from archivos where idarchivo ='"+id+"'") ;
           if(result3.next()){

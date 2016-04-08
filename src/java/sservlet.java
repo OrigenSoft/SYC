@@ -42,9 +42,11 @@ public class sservlet extends HttpServlet {
    
         
         try (PrintWriter out = response.getWriter()) {
+             if(nombre!=null&&!nombre.isEmpty()){
+            
            
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
             ResultSet result = sql.executeQuery("select * from Siniestro where IdSiniestro ='"+nombre+"' and Compania='"+compa+"'");
             
@@ -78,7 +80,7 @@ public class sservlet extends HttpServlet {
                             
                             
          Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
             ResultSet result2 = sql.executeQuery("select * from Vehiculo where IdVehiculo ='"+IdVehiculo+"'");
             
@@ -142,6 +144,28 @@ out.println("</script>");
             }
                
     }
+             else{
+                 response.setContentType("text/html");  
+               out.println("<head>");
+                out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
+                out.println("<script src=\"dist/sweetalert.min.js\"></script> <link rel=\"stylesheet\" type=\"text/css\" href=\"dist/sweetalert.css\">");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<br>");
+                out.println("<script type=\"text/javascript\">");  
+                out.println("sweetAlert({\n" +
+"    title: \"Error!\",\n" +
+"    text: \"Llene todos los campos!\",\n" +
+"    type: \"error\"\n" +
+"},\n" +
+"\n" +
+"function () {\n" +
+"    window.location.href = 'busqueda.html';\n" +
+"});"); 
+out.println("</script>"); 
+             }
+                 
+        }
          
     }
     

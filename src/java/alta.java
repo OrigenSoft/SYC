@@ -52,6 +52,21 @@ public class alta extends HttpServlet {
               String codsec = request.getParameter("codsec");
                String contrasenia = request.getParameter("contrasenia");
                String tipo="usuario";
+               boolean a,b,c,d,z,f,g,h;
+               a=compania!=null&&!compania.isEmpty();
+               b=nom!=null&&!nom.isEmpty();
+               c=edad!=null&&!edad.isEmpty();
+               d=sexo!=null&&!sexo.isEmpty();
+               z=correo!=null&&!correo.isEmpty();
+               f=telefono!=null&&!telefono.isEmpty();
+               g=codsec!=null&&!codsec.isEmpty();
+               h=contrasenia!=null&&!contrasenia.isEmpty();
+               
+                try (PrintWriter out = response.getWriter()) {
+                    if(a&&b&&c&&d&&z&&f&&g&&h){
+                    
+                    
+                    
                int edad2=Integer.parseInt(edad);
                int telefono2=Integer.parseInt(telefono);
                
@@ -83,10 +98,10 @@ public class alta extends HttpServlet {
         Statement sql ;
    
         
-     try (PrintWriter out = response.getWriter()) {
+    
          
        Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
             ResultSet result2 = sql.executeQuery("select * from Usuario where   CodSec ='"+codsec+"'");
             
@@ -122,12 +137,12 @@ out.println("</script>");
          
        
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
             ResultSet resulte = sql.executeQuery("select * from Codigo where Codigo ='"+codsec+"' and Compania='"+compania+"'");
           if(resulte.next()){
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
             
             response.setContentType("text/html");  
@@ -199,6 +214,28 @@ out.println("</script>");
           }
      }
     }
+                    else
+                    {
+                        response.setContentType("text/html");  
+               out.println("<head>");
+                out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
+                out.println("<script src=\"dist/sweetalert.min.js\"></script> <link rel=\"stylesheet\" type=\"text/css\" href=\"dist/sweetalert.css\">");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<br>");
+                out.println("<script type=\"text/javascript\">");  
+                out.println("sweetAlert({\n" +
+"    title: \"Error!\",\n" +
+"    text: \"Llene todos los campos!\",\n" +
+"    type: \"error\"\n" +
+"},\n" +
+"\n" +
+"function () {\n" +
+"    window.location.href = 'registro.html';\n" +
+"});"); 
+out.println("</script>"); 
+                    }
+                }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

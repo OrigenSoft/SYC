@@ -74,6 +74,10 @@
         <servlet-class>pedf2</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>camperu</servlet-name>
+        <servlet-class>camperu</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>uplodad</servlet-name>
         <servlet-class>uplodad</servlet-class>
     </servlet>
@@ -104,6 +108,10 @@
     <servlet-mapping>
         <servlet-name>servlet</servlet-name>
         <url-pattern>/servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>camperu</servlet-name>
+        <url-pattern>/camperu</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>sservlet</servlet-name>

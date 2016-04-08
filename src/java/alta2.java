@@ -77,7 +77,7 @@ public class alta2 extends HttpServlet {
                     String cos = request.getParameter("costo");
             String correo2 =request.getParameter("correo2");
             String pass =request.getParameter("pass");
-               int cos2=Integer.parseInt(cos);
+               
       
         String idSin = request.getParameter("idSiniestro");
          String compania = request.getParameter("compania");
@@ -100,10 +100,36 @@ public class alta2 extends HttpServlet {
              String idVehi = request.getParameter("idVehiculo");
             String idar=request.getParameter("idar");
             String nomar=request.getParameter("nombrear");
-               int idVehi2=Integer.parseInt(idVehi);
+              
               InputStream inputStream = null;
-               int idsin2=Integer.parseInt(idSin);
+               
             Part filePart = request.getPart("wor");
+            boolean a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v;
+            
+            a=nomVehi!=null && !nomVehi.isEmpty();
+            b=mar!=null && !mar.isEmpty();
+            c=mod!=null && !mod.isEmpty();
+            d=plac!=null && !plac.isEmpty();
+            e=nose!=null && !nose.isEmpty();
+            f=nomo!=null && !nomo.isEmpty();
+            g=cos!=null && !cos.isEmpty();
+            h=correo2!=null && !correo2.isEmpty();
+            i=pass!=null && !pass.isEmpty();
+            j=idSin!=null && !idSin.isEmpty();
+            k=compania!=null && !compania.isEmpty();
+            l=correo!=null && !correo.isEmpty();
+            m=asegurado!=null && !asegurado.isEmpty();
+            n=poliza!=null && !poliza.isEmpty();
+            o=vipoliza!=null && !vipoliza.isEmpty();
+            p=fesi!=null && !fesi.isEmpty();
+            q=feap!=null && !feap.isEmpty();
+            r=feclau!=null && !feclau.isEmpty();
+            s=info!=null && !info.isEmpty();
+            t=idVehi!=null && !idVehi.isEmpty();
+            u=idar!=null && !idar.isEmpty();
+            v=nomar!=null && !nomar.isEmpty();
+            
+            
             
             if (filePart != null) 
                 {
@@ -113,7 +139,16 @@ public class alta2 extends HttpServlet {
 
                     inputStream = filePart.getInputStream();
                 }
+           if(a && b && c && d && e && f && g && h && i && j && k && l && m && n && o && p && q && r && s && t ){
+    
+                
                
+            
+            
+            
+               int cos2=Integer.parseInt(cos);
+                int idVehi2=Integer.parseInt(idVehi);
+                int idsin2=Integer.parseInt(idSin);
 
     
         Connection connectionBD = null;
@@ -141,20 +176,20 @@ public class alta2 extends HttpServlet {
 //             out.println(feclau3);
 //             out.println(info);
             Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
             int resu=  sql.executeUpdate("insert into Vehiculo values('"+idVehi2+"','"+nomVehi+"','"+mar+"','"+mod+"','"+plac+"','"+nose+"','"+nomo+"','"+cos2+"')");
            out.println("hola");
           if(resu==1){
               Class.forName("com.mysql.jdbc.Driver");
-            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             sql = connectionBD.createStatement();
            int resu2=sql.executeUpdate("insert into siniestro values('"+idsin2+"','"+compania+"','"+correo+"','"+idVehi2+"','"+asegurado+"','"+poliza+"','"+vipoliza+"','"+fesi+"','"+feap+"','"+feclau+"','"+info+"')");
            if (resu2==1) {
                
           
               // Class.forName("com.mysql.jdbc.Driver");
-            //connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            //connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
             //sql = connectionBD.createStatement();
            //int resu3=sql.executeUpdate("insert into archivos values('"+idar+"','"+nomar+"','"+inputStream+"','"+idsin2+"')");
            
@@ -163,7 +198,7 @@ public class alta2 extends HttpServlet {
             //variable para la conexion
             Connection conn1=null;
            
-            conn1= DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            conn1= DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","carlos98");
            
             pstatement1=conn1.prepareStatement("insert into archivos values(?,?,?)");
            
@@ -265,6 +300,33 @@ public class alta2 extends HttpServlet {
           
           
           }
+            else{
+                response.setContentType("text/html");  
+               out.println("<head>");
+                out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
+                out.println("<script src=\"dist/sweetalert.min.js\"></script> <link rel=\"stylesheet\" type=\"text/css\" href=\"dist/sweetalert.css\">");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<br>");
+                out.println("<script type=\"text/javascript\">");  
+                out.println("sweetAlert({\n" +
+"    title: \"Error!\",\n" +
+"    text: \"Llene todos los campos!\",\n" +
+"    type: \"error\"\n" +
+"},\n" +
+"\n" +
+"function () {\n" +
+"    window.location.href = 'registro1.html';\n" +
+"});"); 
+out.println("</script>"); 
+            }
+                
+        }
+       
+        {
+                
+                
+                }
            
         }
     
@@ -320,4 +382,5 @@ public class alta2 extends HttpServlet {
     }// </editor-fold>
 
 }
-        
+    
+
