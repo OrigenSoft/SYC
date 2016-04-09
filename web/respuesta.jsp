@@ -212,7 +212,7 @@ Connection connectionBD = null;
                     
         %>
 
-<center><a href="view_file.jsp?id=<%out.print(rs2.getString("idarchivo"));%>" target="_blank">View</a></center>
+<center><a href="view_file.jsp?id=<%out.print(rs2.getString("idarchivo"));%>" target="_blank">Ver informe PDF</a></center>
  <script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
