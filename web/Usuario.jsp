@@ -71,6 +71,7 @@ out.println("</script>");
 								
 							</li>
 							<li><a href="busqueda.html">Buscar</a></li>
+                                                        	<li><a href="faq.jsp">Ayuda</a></li>
 							<li>
                                                           
                                                             <form method="post" action="cerrar">
