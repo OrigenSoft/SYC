@@ -98,6 +98,7 @@ out.println("</script>");
                                                         </li>
 							
 							<li><a href="Aperfil.jsp">Perfil</a></li>
+                                                        <li><a href="facad.jsp">Ayuda</a></li>
 							<li>
                                                               <form method="post" action="cerrar">
                                                                 
