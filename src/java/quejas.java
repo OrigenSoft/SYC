@@ -76,7 +76,7 @@ public class quejas extends HttpServlet {
     final String miContraseña = "secretajuanito"; //contraseña del correo
  
     String servidorSMTP = "smtp.gmail.com";
-   String puertoEnvio = "25";
+   String puertoEnvio = "465";
     String mailReceptor = "wedart148@gmail.com" ;
     String asunto = "Soporte"; 
     String cuerpo = "el usuario "+correo+"  ha presentado la siguiente "+ tipo + "\n"+
@@ -137,11 +137,11 @@ public class quejas extends HttpServlet {
         }
         }
                 else{
-                      final String miCorreo = "wedart148@hotmail.com"; //correo del administrador desde que seran enviados los mensajes
-    final String miContraseña = "Secretajuanito1"; //contraseña del correo
+                    final String miCorreo = "wedart148@gmail.com"; //correo del administrador desde que seran enviados los mensajes
+    final String miContraseña = "secretajuanito"; //contraseña del correo
  
-    String servidorSMTP = "smtp.live.com";
-   String puertoEnvio = "25";
+    String servidorSMTP = "smtp.gmail.com";
+   String puertoEnvio = "465";
     String mailReceptor = "wedart148@hotmail.com" ;
     String asunto = "Soporte"; 
     String cuerpo = "el usuario "+correo+"  ha presentado la siguiente "+ tipo + "\n"+
@@ -219,9 +219,9 @@ public class quejas extends HttpServlet {
     final String miContraseña2 = "secretajuanito"; //contraseña del correo
  
     String servidorSMTP2 = "smtp.gmail.com";
-   String puertoEnvio2 = "25";
+   String puertoEnvio2 = "465";
     String mailReceptor2 = "wedart148@gmail.com" ;
-    String asunto2 = "codigo"; 
+    String asunto2 = "soporte"; 
     String cuerpo2 = "el usuario "+correo+" ya ha presentado mas de "+cont+" quejas dale ban por chillon"; //mensaje que sera enviado en el correro
   
                Properties props2 = new Properties();
@@ -286,11 +286,11 @@ public class quejas extends HttpServlet {
           
                 
                 else{
-                     final String miCorreo2 = "wedart148@hotmail.com"; //correo del administrador desde que seran enviados los mensajes
-    final String miContraseña2 = "Secretajuanito1"; //contraseña del correo
+                    final String miCorreo2 = "wedart148@gmail.com"; //correo del administrador desde que seran enviados los mensajes
+    final String miContraseña2 = "secretajuanito"; //contraseña del correo
  
-  String servidorSMTP2 = "smtp.live.com";
-   String puertoEnvio2 = "25";
+    String servidorSMTP2 = "smtp.gmail.com";
+   String puertoEnvio2 = "465";
     String mailReceptor2= "wedart148@hotmail.com" ;
     String asunto2= "Soporte"; 
     String cuerpo2 = "el usuario "+correo+" ya ha presentado mas de "+cont+" recomendaciones dale ban por chillon"; //mensaje que sera enviado en el correro
