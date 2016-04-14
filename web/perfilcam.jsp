@@ -66,6 +66,7 @@ String sexo = (String)session.getAttribute("sexo");
 String correo = (String)session.getAttribute("correo");
 String telefono = (String)session.getAttribute("telefono");
 String contra =(String)session.getAttribute("contra");
+String idusu =(String)session.getAttribute("idusu");
 
 if(nom==null){
      response.setContentType("text/html");  
@@ -98,6 +99,9 @@ out.println("</script>");
 <br>
 <br>
 <form method="post" action="camperu">
+    ID usuario <input type="text" value="<%=idusu%>" name="nome" required readonly>
+    <br>
+    <br>
     Nombre empleado <input type="text" value="<%=nom%>" name="nome" required>
     <br><br>
     Compañia     <input type="text" value="<%=compa%>" name="compa" required readonly>
@@ -106,7 +110,7 @@ out.println("</script>");
     <br><br>
     Sexo <input type="text" value="<%=sexo%>" name="sex" required readonly>
     <br><br>
-    Correo <input type="text" value="<%=correo%>" name="correo" required readonly>
+    Correo <input type="text" value="<%=correo%>" name="correo" required >
     <br><br>
     telefono <input type="text" value="<%=telefono%>" name="tel" required>
     <br><br>
