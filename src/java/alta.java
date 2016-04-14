@@ -165,7 +165,7 @@ out.println("</script>");
 out.println("</script>"); 
             
       
-            int resu=  sql.executeUpdate("insert into Usuario values('"+compania+"','"+nom+"','"+edad2+"','"+sexo+"','"+correo+"','"+telefono2+"','"+codsec+"','"+contr2+"','"+tipo+"')");
+            int resu=  sql.executeUpdate("insert into Usuario (Compania , NombreEmpleado , edad , sexo , correo , telefono , CodSec , contraseña , tipou ) values('"+compania+"','"+nom+"','"+edad2+"','"+sexo+"','"+correo+"','"+telefono2+"','"+codsec+"','"+contr2+"','"+tipo+"')");
           if(resu==1){
                response.sendRedirect("http://localhost:8080/SYC/faces/index.html");
           }
