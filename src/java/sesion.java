@@ -113,7 +113,7 @@ response.sendRedirect("http://localhost:8080/SYC/faces/Usuario.jsp");
             }
                  else{
                  
-           
+            String idusu= result.getString("idusu");
                  String compa = result.getString("Compania");
                   String nom = result.getString("NombreEmpleado");
                   String edad=result.getString("edad");
@@ -130,7 +130,7 @@ response.sendRedirect("http://localhost:8080/SYC/faces/Usuario.jsp");
          sesion.setAttribute("correo", correo);
          sesion.setAttribute("telefono", telefono);
           sesion.setAttribute("contra", contr);
-         
+         sesion.setAttribute("idusu", idusu);
 response.sendRedirect("http://localhost:8080/SYC/faces/principal.jsp");
 
             }

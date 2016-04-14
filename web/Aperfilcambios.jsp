@@ -74,7 +74,7 @@ String sexo = (String)session.getAttribute("sexo");
 String correo = (String)session.getAttribute("correo");
 String telefono = (String)session.getAttribute("telefono");
 String contra =(String)session.getAttribute("contra");
-
+String idusu =(String)session.getAttribute("idusu");
 %>
    <body style="background-image:images/car.jpg ">
          <div>
@@ -82,12 +82,12 @@ String contra =(String)session.getAttribute("contra");
 					<h1 id="logo">Saving Your Car</h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="Usuario.jsp">Inicio</a></li>
+							<li><a href="principal.jsp">Inicio</a></li>
 							<li>
-								<a href="perfil.jsp">Perfil</a>
+								<a href="Aperfil.jsp">Perfil</a>
 								
 							</li>
-							<li><a href="busqueda.html">Buscar</a></li>
+							<li><a href="Aconsulta.jsp">Buscar</a></li>
 							<li>
                                                           
                                                             <form method="post" action="cerrar">
@@ -105,6 +105,8 @@ String contra =(String)session.getAttribute("contra");
                     <br>
 <br>
 <form method="post" action="camper">
+    Id usuario <input type="text" value="<%=idusu%>" name="idusu" required readonly>
+    <br><br>
     Nombre empleado <input type="text" value="<%=noma%>" name="nome" required>
     <br><br>
     Compañia     <input type="text" value="<%=compa%>" name="compa" required readonly>
@@ -113,7 +115,7 @@ String contra =(String)session.getAttribute("contra");
     <br><br>
     Sexo <input type="text" value="<%=sexo%>" name="sex" required readonly>
     <br><br>
-    Correo <input type="text" value="<%=correo%>" name="correo" required readonly>
+    Correo <input type="text" value="<%=correo%>" name="correo" required>
     <br><br>
     telefono <input type="text" value="<%=telefono%>" name="tel" required>
     <br><br>

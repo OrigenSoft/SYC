@@ -48,7 +48,7 @@ public class camper extends HttpServlet {
  
          String nom = request.getParameter("nome");
           String edad = request.getParameter("edad");
-       
+       String idusu = request.getParameter("idusu");
             String correo = request.getParameter("correo");
              String telefono = request.getParameter("tel");
                String contr = request.getParameter("con");
@@ -69,7 +69,7 @@ public class camper extends HttpServlet {
         Class.forName("com.mysql.jdbc.Driver");
             connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
-            ResultSet result3 = sql.executeQuery("select * from usuario where correo ='"+correo+"'") ;
+            ResultSet result3 = sql.executeQuery("select * from usuario where idusu ='"+idusu+"'") ;
           if(result3.next()){
                
                int edad2=Integer.parseInt(edad);
@@ -108,7 +108,7 @@ public class camper extends HttpServlet {
             sql = connectionBD.createStatement();
             out.println("hola");
             
-            int resu=  sql.executeUpdate("UPDATE Usuario SET "+"NombreEmpleado='"+nom+"',edad='"+edad2+"',telefono='"+telefono2+"',contraseña='"+contr2+"' WHERE correo='"+correo+"';");
+            int resu=  sql.executeUpdate("UPDATE Usuario SET "+"NombreEmpleado='"+nom+"',edad='"+edad2+"',telefono='"+telefono2+"', correo='"+correo+"', contraseña='"+contr2+"' WHERE idusu='"+idusu+"';");
           if(resu==1){
               if(tipo.equals("administrador")){
               response.sendRedirect("http://localhost:8080/SYC/faces/principal.jsp");
@@ -122,6 +122,24 @@ public class camper extends HttpServlet {
             
     }
     }else{
+               response.setContentType("text/html");  
+               out.println("<head>");
+                out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
+                out.println("<script src=\"dist/sweetalert.min.js\"></script> <link rel=\"stylesheet\" type=\"text/css\" href=\"dist/sweetalert.css\">");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<br>");
+                out.println("<script type=\"text/javascript\">");  
+                out.println("sweetAlert({\n" +
+"    title: \"Error!\",\n" +
+"    text: \"No le quiera jugar al verga, compa!\",\n" +
+"    type: \"error\"\n" +
+"},\n" +
+"\n" +
+"function () {\n" +
+"    window.location.href = 'perfilcam.jsp';\n" +
+"});"); 
+out.println("</script>"); 
                
 
           }

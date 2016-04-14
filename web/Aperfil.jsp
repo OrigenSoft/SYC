@@ -71,7 +71,7 @@ if(tipo==null){
 "});"); 
 out.println("</script>"); 
 }
-
+String idusu =(String)session.getAttribute("idusu");
 %>
    <body style="background-image:images/car.jpg ">
         <div>
@@ -111,6 +111,10 @@ out.println("</script>");
                 
                 
                 <center><table>
+                        <tr> 
+        <td><font size="4"><b>id Usuario</b></td>
+        <td><%=idusu%> </td></tr>
+    <tr>
                     <tr>
                         <td><font size="4"><b>Correo</b></td>
                         <td><%=correo%> </td></tr>
