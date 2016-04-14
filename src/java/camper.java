@@ -122,24 +122,8 @@ public class camper extends HttpServlet {
             
     }
     }else{
-               response.setContentType("text/html");  
-               out.println("<head>");
-                out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
-                out.println("<script src=\"dist/sweetalert.min.js\"></script> <link rel=\"stylesheet\" type=\"text/css\" href=\"dist/sweetalert.css\">");
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<br>");
-                out.println("<script type=\"text/javascript\">");  
-                out.println("sweetAlert({\n" +
-"    title: \"Error!\",\n" +
-"    text: \"No le quiera jugar al verga, compa!\",\n" +
-"    type: \"error\"\n" +
-"},\n" +
-"\n" +
-"function () {\n" +
-"    window.location.href = 'Aperfilcambios.jsp';\n" +
-"});"); 
-out.println("</script>"); 
+               
+
           }
                     }
           else{
