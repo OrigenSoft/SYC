@@ -103,7 +103,10 @@ public class sesion extends HttpServlet {
          sesion.setAttribute("sexo", sexo);
          sesion.setAttribute("correo", correo);
          sesion.setAttribute("telefono", telefono);
-          sesion.setAttribute("contra", contr);
+          
+         sesion.setAttribute("contra", contr);
+            
+         sesion.setAttribute("idusu", idusu);
          
 response.sendRedirect("http://localhost:8080/SYC/faces/Usuario.jsp");
 
