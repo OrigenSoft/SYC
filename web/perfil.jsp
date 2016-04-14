@@ -66,6 +66,7 @@ String sexo = (String)session.getAttribute("sexo");
 String correo = (String)session.getAttribute("correo");
 String telefono = (String)session.getAttribute("telefono");
 String contra =(String)session.getAttribute("contra");
+String idusu =(String)session.getAttribute("idusu");
 if(nom==null){
      response.setContentType("text/html");  
                out.println("<head>");
@@ -99,6 +100,10 @@ out.println("</script>");
 <br>
 <center>
 <table>
+    <tr> 
+        <td><font size="4"><b>id Usuario</b></td>
+        <td><%=idusu%> </td></tr>
+    <tr>
     <tr> 
         <td><font size="4"><b>Nombre</b></td>
         <td><%=nom%> </td></tr>
