@@ -99,7 +99,7 @@ out.println("</script>");
 <br>
 <br>
 <form method="post" action="camperu">
-    ID usuario <input type="text" value="<%=idusu%>" name="nome" required readonly>
+    ID usuario <input type="text" value="<%=idusu%>" name="idusu" required readonly>
     <br>
     <br>
     Nombre empleado <input type="text" value="<%=nom%>" name="nome" required>
