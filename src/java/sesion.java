@@ -88,6 +88,7 @@ public class sesion extends HttpServlet {
             if(result.next() && sesion.getAttribute("usuario") == null){
            String tipo=result.getString("tipou");
             if(tipo.equals("usuario")){
+                String idusu= result.getString("idusu");
                  String compa = result.getString("Compania");
                   String nom = result.getString("NombreEmpleado");
                   String edad=result.getString("edad");
