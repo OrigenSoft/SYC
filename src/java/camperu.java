@@ -48,6 +48,7 @@ public class camperu extends HttpServlet {
  
          String nom = request.getParameter("nome");
           String edad = request.getParameter("edad");
+          String idusu= request.getParameter("idusu");
           
             String correo = request.getParameter("correo");
              String telefono = request.getParameter("tel");
@@ -70,7 +71,7 @@ public class camperu extends HttpServlet {
                         Class.forName("com.mysql.jdbc.Driver");
             connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
-            ResultSet result3 = sql.executeQuery("select * from usuario where correo ='"+correo+"'") ;
+            ResultSet result3 = sql.executeQuery("select * from usuario where idusu ='"+idusu+"'") ;
           if(result3.next()){
               
               
@@ -114,7 +115,7 @@ public class camperu extends HttpServlet {
             sql = connectionBD.createStatement();
             out.println("hola");
             
-            int resu=  sql.executeUpdate("UPDATE Usuario SET "+"NombreEmpleado='"+nom+"',edad='"+edad2+"',telefono='"+telefono2+"',contraseña='"+contr2+"' WHERE correo='"+correo+"';");
+            int resu=  sql.executeUpdate("UPDATE Usuario SET "+"NombreEmpleado='"+nom+"',edad='"+edad2+"',telefono='"+telefono2+"',correo='"+correo+"',contraseña='"+contr2+"' WHERE idusu='"+idusu+"';");
           if(resu==1){
               if(tipo.equals("administrador")){
               response.sendRedirect("http://localhost:8080/SYC/faces/index.html");
