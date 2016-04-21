@@ -99,12 +99,11 @@ out.println("</script>");
 							
 							<li><a href="Aperfil.jsp">Perfil</a></li>
                                                         <li><a href="facad.jsp">Ayuda</a></li>
-							<li>
-                                                              <form method="post" action="cerrar">
-                                                                
-                                                           <input type="submit" value= "logout" >     
-                                                            </form> </span></li>
+                                                        
                                                         <li><a href="quejas2.jsp">Queja o sugerencia</a></li>
+                                                        <li><span class="button disabled"><a href="cerrar">
+                                                             Salir  
+                                                             </a></span> </li>
 						</ul>
 					</nav>
 				</header>
