@@ -30,6 +30,10 @@
         <servlet-class>logout</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>quejas21</servlet-name>
+        <servlet-class>quejas21</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>cerrar</servlet-name>
         <servlet-class>cerrar</servlet-class>
     </servlet>
@@ -188,6 +192,10 @@
     <servlet-mapping>
         <servlet-name>quejas</servlet-name>
         <url-pattern>/quejas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>quejas21</servlet-name>
+        <url-pattern>/quejas21</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -205,7 +205,7 @@ public class quejas21 extends HttpServlet {
                     
                     
                 }
-                response.sendRedirect("http://localhost:8080/SYC/faces/quejas2.jsp");
+                response.sendRedirect("http://localhost:8080/SYC/faces/quejas21.jsp");
                 
                 Class.forName("com.mysql.jdbc.Driver");
             connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
@@ -281,7 +281,7 @@ public class quejas21 extends HttpServlet {
     
     
              
-               response.sendRedirect("http://localhost:8080/SYC/faces/quejas2.jsp");
+               response.sendRedirect("http://localhost:8080/SYC/faces/quejas21.jsp");
                     }
           
                 
@@ -352,7 +352,7 @@ public class quejas21 extends HttpServlet {
     
     
              
-               response.sendRedirect("http://localhost:8080/SYC/faces/quejas2.jsp");
+               response.sendRedirect("http://localhost:8080/SYC/faces/quejas21.jsp");
                     }
             }
           
@@ -360,7 +360,7 @@ public class quejas21 extends HttpServlet {
                     
              
             else{
-                  response.sendRedirect("http://localhost:8080/SYC/faces/quejas2.jsp");
+                  response.sendRedirect("http://localhost:8080/SYC/faces/quejas21.jsp");
             }
             
         }

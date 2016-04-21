@@ -48,7 +48,7 @@ function sale(){
                                                           
                                                              
                                                          
-                                                          <li><a href="quejas.jsp">Queja o sugerencia</a></li>
+                                                          <li><a href="quejas21.jsp">Queja o sugerencia</a></li>
                                                           <li><span class="button disabled"><a href="cerrar">
                                                              Salir  
                                                              </a></span> </li>

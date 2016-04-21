@@ -102,12 +102,12 @@ out.println("</script>");
                                                                 
                                                            <input type="submit" value= "logout" >     
                                                             </form> </span></li>
-                                                        <li><a href="quejas2.jsp">Queja o sugerencia</a></li>
+                                                        <li><a href="quejas21.jsp">Queja o sugerencia</a></li>
 						</ul>
 					</nav>
 				</header>
             <br><br><br>
-            <form method="post" action="quejas2">
+            <form method="post" action="quejas21">
                 <select name="tipo" selected="elija un tipo" required>
                     
    <option value="Sugerencia">Sugerencia</option>

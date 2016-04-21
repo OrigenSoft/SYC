@@ -100,7 +100,7 @@ out.println("</script>");
 							<li><a href="Aperfil.jsp">Perfil</a></li>
                                                         <li><a href="facad.jsp">Ayuda</a></li>
                                                         
-                                                        <li><a href="quejas2.jsp">Queja o sugerencia</a></li>
+                                                        <li><a href="quejas21.jsp">Queja o sugerencia</a></li>
                                                         <li><span class="button disabled"><a href="cerrar">
                                                              Salir  
                                                              </a></span> </li>

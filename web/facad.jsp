@@ -117,7 +117,7 @@ out.println("</script>");
                                                                 
                                                            <input type="submit" value= "logout" >     
                                                             </form> </span></li>
-                                                        <li><a href="quejas2.jsp">Queja o sugerencia</a></li>
+                                                        <li><a href="quejas21.jsp">Queja o sugerencia</a></li>
 						</ul>
 					</nav>
 				</header>
