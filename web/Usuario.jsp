@@ -74,12 +74,12 @@ out.println("</script>");
                                                         	<li><a href="faq.jsp">Ayuda</a></li>
 							<li>
                                                           
-                                                            <form method="post" action="cerrar">
-                                                                
-                                                           <input type="submit" value= "logout" >     
-                                                            </form>    
+                                                             
                                                          
                                                           <li><a href="quejas.jsp">Queja o sugerencia</a></li>
+                                                          <li><span class="button disabled"><a href="cerrar">
+                                                             Salir  
+                                                             </a></span> </li>
 						</ul>
 					</nav>
 				</header>
@@ -95,5 +95,13 @@ out.println("</script>");
 				</section>
 		
         </div>
+                                                        <script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
     </body>
 </html>
