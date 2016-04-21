@@ -214,20 +214,20 @@ Connection connectionBD = null;
                             <input type="text" name="asegurado" id="asegurado" value="" placeholder="Asegurado" required/><br>
                             <input type="text" name="poliza" id="poliza" value="" placeholder="P&oacute;liza" required/><br>
                             <div><h3>Vigencia de la Poliza</h3></div><div disabled>
-                                <input type="text" name="vipoliza" value="" id="vipoliza" required>
+                                <input type="text" name="vipoliza" value="" id="vipoliza" required readonly>
                              
                              </div>
                             <div><h3>Fecha del Siniestro</h3></div><div disabled>
-                             <input type="text" name="fesi" value="" id="fesi" required>
+                             <input type="text" name="fesi" value="" id="fesi" required readonly>
                              
                              </div>
                             <div><h3>Fecha de Apertura del Caso</h3></div><div disabled>
-                             <input type="text" name="feap" value="" id="feap" required>
+                                <input type="text" name="feap" value="" id="feap" required readonly>
                              
                              </div>
                             
                             <div><h3>Fecha de Clausura del caso</h3></div><div disabled>
-                            <input type="text" name="feclau" value="" id="feclau" required>
+                            <input type="text" name="feclau" value="" id="feclau" required readonly>
                              <br><br>
                              <input type="text" name="info" id="info" value="" placeholder="Notas del informe" required><br>
                             
