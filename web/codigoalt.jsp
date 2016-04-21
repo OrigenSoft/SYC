@@ -122,7 +122,7 @@ out.println("</script>");
 							<li>
                                                             <a>Siniestro</a>
 								<ul>
-									<li><a href="registro1.html">Registrar</a></li>
+									<li><a href="registro1.jsp">Registrar</a></li>
                                                                         <li><a href="Aconsulta.jsp">Buscar</a></li>
 								</ul>
 							</li>

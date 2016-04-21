@@ -66,8 +66,8 @@ public class alta2 extends HttpServlet {
         
         
         try (PrintWriter out = response.getWriter()) {
-        
-        
+            HttpSession sesion = request.getSession();
+        String idusu=(String) sesion.getAttribute("idusu");
       String nomVehi = request.getParameter("nombreVehiculo");
                String mar = request.getParameter("marca");
                 String mod= ((String)request.getParameter("modelo"));
@@ -184,7 +184,7 @@ public class alta2 extends HttpServlet {
               Class.forName("com.mysql.jdbc.Driver");
             connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
-           int resu2=sql.executeUpdate("insert into siniestro values('"+idsin2+"','"+compania+"','"+correo+"','"+idVehi2+"','"+asegurado+"','"+poliza+"','"+vipoliza+"','"+fesi+"','"+feap+"','"+feclau+"','"+info+"')");
+           int resu2=sql.executeUpdate("insert into siniestro values('"+idsin2+"','"+compania+"','"+correo+"','"+idusu+"','"+idVehi2+"','"+asegurado+"','"+poliza+"','"+vipoliza+"','"+fesi+"','"+feap+"','"+feclau+"','"+info+"')");
            if (resu2==1) {
                
           
@@ -222,7 +222,7 @@ public class alta2 extends HttpServlet {
     final String miCorreo = correo2; //correo del administrador desde que seran enviados los mensajes
     final String miContraseña = pass; //contraseña del correo
     final String servidorSMTP = "smtp.gmail.com";
-    final String puertoEnvio = "25";
+    final String puertoEnvio = "465";
     String mailReceptor = correo;
     String asunto = "codigo"; 
     String cuerpo = "Hola empleado de la compañia " + compania +"\n"+
@@ -316,7 +316,7 @@ public class alta2 extends HttpServlet {
 "},\n" +
 "\n" +
 "function () {\n" +
-"    window.location.href = 'registro1.html';\n" +
+"    window.location.href = 'registro1.jsp';\n" +
 "});"); 
 out.println("</script>"); 
             }

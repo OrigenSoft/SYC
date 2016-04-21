@@ -1,3 +1,15 @@
+<%-- 
+    Document   : registro1.jsp
+    Created on : 21/04/2016, 08:36:10 AM
+    Author     : Alumno
+--%>
+
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -117,6 +129,32 @@ $(function() {
             }
                     
                 </script>
+                <%
+                   
+            String id=(request.getParameter("idsin2"));
+            
+         
+Connection connectionBD = null;
+        Statement sql = null;
+   int j=0;
+   
+                ArrayList compa = new ArrayList();
+                
+                Class.forName("com.mysql.jdbc.Driver");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            sql = connectionBD.createStatement();
+            ResultSet rs = sql.executeQuery("select * from Usuario") ;
+          while(rs.next()){
+              String com=rs.getString("Compania");
+              compa.add(j, com);
+              
+          }
+            
+                    
+        %>
+                    
+                    
+                    %>
     <body oncopy="return false" oncut="return false" onpaste="return false" class="landing">
         <div  >
             <header id="header">
@@ -161,7 +199,17 @@ $(function() {
                         <div class="6u 12u$(xsmall)">
                             <input type="text" name="idSiniestro" id="idSiniestro" onKeyPress="return validacp(event)" value="" placeholder="N&uacute;mero de siniestro" required/><br>
                             <input type="text" name="idVehiculo2" id="idVehiculo2" value="" placeholder="N&uacute;mero de veh&iacute;culo" readonly /><br>
-                            <input type="text" name="compania" id="compania" value="" placeholder="Compa&ntilde;&iacute;a" required/><br>
+                            
+                            <select name="compania" id="compania">
+                                <option>Seleccione la compania</option>
+   <%  for(int i = 0; i < compa.size(); i++) {
+           String option = (String)compa.get(i);
+   %>
+   <option value="<%= option %>"><%= option %></option>
+   <% } %>
+</select>
+                            
+                            
                             <input type="email" name="correoU" id="correoU" value="" placeholder="Correo electr&oacute;nico" required/><br>
                             <input type="text" name="asegurado" id="asegurado" value="" placeholder="Asegurado" required/><br>
                             <input type="text" name="poliza" id="poliza" value="" placeholder="P&oacute;liza" required/><br>

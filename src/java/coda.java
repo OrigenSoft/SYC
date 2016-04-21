@@ -82,7 +82,7 @@ public class coda extends HttpServlet {
     final String miContraseña = pass; //contraseña del correo
  
     String servidorSMTP = "smtp.gmail.com";
-   String puertoEnvio = "25";
+   String puertoEnvio = "465";
     String mailReceptor = correo;
     String asunto = "codigo"; 
     String cuerpo = "Hola empleado de la compañia " + compa +"\n"+
