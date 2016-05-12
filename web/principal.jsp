@@ -96,7 +96,14 @@ out.println("</script>");
                                                                             <li> <a href="codigocon.jsp">Consulta</a>  </li>
                                                                         </ul>
                                                         </li>
-							
+                                                        
+                                                        <li><a> Registrar adminnistrador</a>
+                                                            <ul>
+                                                                <li> <a href="regiad.jsp">Alta</a> </li>
+                                                                <li> <a href="admincon.jsp">Consulta</a>  </li>
+                                                            </ul>
+                                                        
+                                                        </li>
 							<li><a href="Aperfil.jsp">Perfil</a></li>
                                                         <li><a href="facad.jsp">Ayuda</a></li>
                                                         

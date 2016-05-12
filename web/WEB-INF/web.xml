@@ -101,6 +101,10 @@
         <servlet-name>quejas</servlet-name>
         <servlet-class>quejas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>altaad</servlet-name>
+        <servlet-class>altaad</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -196,6 +200,10 @@
     <servlet-mapping>
         <servlet-name>quejas21</servlet-name>
         <url-pattern>/quejas21</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>altaad</servlet-name>
+        <url-pattern>/altaad</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

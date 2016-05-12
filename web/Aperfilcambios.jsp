@@ -8,6 +8,35 @@
     <head>
         <title>Saving Your Car</title>
   <script type="text/javascript">
+      
+      function validacp(e)
+            {
+                var keycar;
+                if(window.event)
+                    keycar = e.keyCode;
+                else
+                    if(e.which)
+                        keycar=e.which;
+                if(keycar>=48 && keycar<=57)
+                    return true;
+                else
+                    return false;
+                
+            }
+            function valida(e)
+            {
+                var keylet;
+                if(window.event)
+                    keylet = e.keyCode; /*IE*/
+                else
+                    if(e.which)
+                        keylet = e.which; //Netscape firefox opera
+                
+                if((keylet>=97&&keylet<=122)||keylet===8 ||keylet===32 || keylet===239 ||keylet>=65&&keylet<=90 ||keylet>=160&&keylet<=163)
+                  return true;
+                else
+                  return false;
+            }
 
 window.onunload = sale;
 var valor;
@@ -107,17 +136,17 @@ String idusu =(String)session.getAttribute("idusu");
 <form method="post" action="camper">
     Id usuario <input type="text" value="<%=idusu%>" name="idusu" required readonly>
     <br><br>
-    Nombre empleado <input type="text" value="<%=noma%>" name="nome" required>
+    Nombre empleado <input type="text" value="<%=noma%>" onKeyPress="return valida(event)" name="nome" required>
     <br><br>
     Compañia     <input type="text" value="<%=compa%>" name="compa" required readonly>
     <br><br>
-    Edad  <input type="text" value="<%=edad%>" name="edad" maxlength="2" required >
+    Edad  <input type="text" value="<%=edad%>" onKeyPress="return validacp(event)" name="edad" maxlength="2" required >
     <br><br>
     Sexo <input type="text" value="<%=sexo%>" name="sex" required readonly>
     <br><br>
     Correo <input type="text" value="<%=correo%>" name="correo" required>
     <br><br>
-    telefono <input type="text" value="<%=telefono%>" name="tel" required>
+    telefono <input type="text" value="<%=telefono%>" onKeyPress="return validacp(event)" name="tel" required>
     <br><br>
     Contraseña <input type="password" value="<%=contra%>" name="con" required> 
     <br><br>
