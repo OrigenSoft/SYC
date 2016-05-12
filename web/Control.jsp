@@ -1,13 +1,16 @@
 <%-- 
-    Document   : admincon
-    Created on : 12/05/2016, 08:27:44 AM
+    Document   : Control
+    Created on : 12/05/2016, 09:28:31 AM
     Author     : Alumno
 --%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Saving Your Car</title>
-  <script type="text/javascript">
+  
+<script type="text/javascript">
 
 window.onunload = sale;
 var valor;
@@ -34,7 +37,6 @@ function sale(){
 }
 </script>
 
-
         <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="assets/css/main.css" />
@@ -43,6 +45,7 @@ function sale(){
                       <%
 String nom = (String)session.getAttribute("usu");
 String compa = (String)session.getAttribute("nomb");
+
 if(nom==null){
      response.setContentType("text/html");  
                out.println("<head>");
@@ -67,7 +70,7 @@ out.println("</script>");
 %>
    <body style="background-image:images/car.jpg ">
         <div>
-            <header id="header">
+           <header id="header">
 					<h1 id="logo">Saving Your Car</h1>
 					<nav id="nav">
 						<ul>
@@ -79,23 +82,7 @@ out.println("</script>");
                                                                         <li><a href="Aconsulta.jsp">Buscar</a></li>
 								</ul>
 							</li>
-                                                        
-                                                        <li>
-                                                      
-									<a>Codigo</a>
-                                                                        <ul>
-                                                                            <li> <a href="codigoalt.jsp">Alta</a> </li>
-                                                                            <li> <a href="codigocon.jsp">Consulta</a>  </li>
-                                                                        </ul>
-                                                        </li>
-                                                        <li><a> Registrar adminnistrador</a>
-                                                            <ul>
-                                                                <li> <a href="regiad.jsp">Alta</a> </li>
-                                                                <li> <a href="admincon.jsp">Consulta</a>  </li>
-                                                            </ul>
-                                                        
-                                                        </li>
-							
+                                                       
 							<li><a href="Aperfil.jsp">Perfil</a></li>
 							<li>
                                                               <form method="post" action="cerrar">
@@ -106,28 +93,65 @@ out.println("</script>");
 					</nav>
 				</header>
             <br><br><br>
-		<div align="center"><h2>Bienvenido </h2>
-                    <h1>
-                        Teclee el correo del usuario o administardor a consultar
-                    </h1>
+		<center>
+                    <h2>El resultado de tu busqueda es </h2>
                     
-                    <form method="post" action="NewServlet">
-                        <input type="email" name="correo" id="correo" required>
-                        <br>
-                        <input type="submit" value="Buscar">
-                        
-                    </form>
-                </div>
+                    
+                    <%
+String Ids = (String)session.getAttribute("id");
+String compania = (String)session.getAttribute("compania");
+String correoU = (String)session.getAttribute("mail");
+String nombre = (String)session.getAttribute("Nombre");
+String edad = (String)session.getAttribute("age");
+String sexo = (String)session.getAttribute("sex");
+String telefono = (String)session.getAttribute("phone");
+String cod = (String)session.getAttribute("code");
+String tipos = (String)session.getAttribute("type");
+
+
+
+
+
+
+
+%>
+
+
+<h1>Datos del vehiculo</h1>
+<table>
+    <tr>
+        <td><font size="4"><b>ID </b></td>
+        <td><%=Ids%> </td></tr>
+    <tr>
+        <td><font size="4"><b>Nombre</b></td>
+        <td><%=nombre%> </td></tr>
+    <tr>
+        <td><font size="4"><b>correo</b></td>
+        <td><%=correoU%></td></tr>
+    <tr>
+        <td><font size="4"><b>Compañia</b></td>
+        <td><%=compania%></td></tr>
+    <tr>
+        <td><font size="4"><b>edad</b></td>
+        <td><%=edad%></td></tr>
+    <tr>
+        <td><font size="4"><b>Sexo</b></td>
+        <td><%=sexo%></td></tr>
+    <tr>
+        <td><font size="4"><b>Telefono</b></td>
+        <td><%=telefono%></td></tr>
+    <tr>
+        <td><font size="4"><b>Codigo</b></td>
+        <td><%=cod%></td></tr>
+    tr>
+        <td><font size="4"><b>tipo</b></td>
+        <td><%=tipos%></td></tr>
+
+</table>
+                </center>
         </div>
-                        <script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-		
-       
-    </body>
+        <form method="post" action="Despidete_de_tu_cuenta">
+            <input type="submit" value="Darle ban al men">
+        </form>
+   </body>
 </html>

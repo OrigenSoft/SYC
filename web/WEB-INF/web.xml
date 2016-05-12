@@ -105,6 +105,14 @@
         <servlet-name>altaad</servlet-name>
         <servlet-class>altaad</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>NewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Despidete_de_tu_cuenta</servlet-name>
+        <servlet-class>Despidete_de_tu_cuenta</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -204,6 +212,14 @@
     <servlet-mapping>
         <servlet-name>altaad</servlet-name>
         <url-pattern>/altaad</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Despidete_de_tu_cuenta</servlet-name>
+        <url-pattern>/Despidete_de_tu_cuenta</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

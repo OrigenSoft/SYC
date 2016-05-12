@@ -206,7 +206,7 @@ String costo = (String)session.getAttribute("costo");
         </div>
 <center>
         <form method="post" action="cambiosin.jsp">
-            
+            <input type="submit" value="Editar">
         </form>
         <form method="post" action="pedf" target="_blank">
         <input type="text" value="<%=Idsiniestro%>" name="id2" style="visibility:hidden" readonly>
