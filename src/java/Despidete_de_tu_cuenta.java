@@ -39,15 +39,32 @@ public class Despidete_de_tu_cuenta extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
          HttpSession sesion = request.getSession();
         String correo=(String) sesion.getAttribute("mail");
-        String tipo=(String) sesion.getAttribute("type");
-         
+       String tipos=(String) sesion.getAttribute("type");
+       
         String compa=(String) sesion.getAttribute("compania");
-        try (PrintWriter out = response.getWriter()) {
-        if(tipo.equals("usuario")){
+      
+       
+          if(tipos.equals("usuario")){
         
             Connection connectionBD = null;
         Statement sql = null;
         Class.forName("com.mysql.jdbc.Driver");
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            sql = connectionBD.createStatement();
+            ResultSet result0 = sql.executeQuery("select * from Siniestro where Compania='"+compa+"'");
+            
+            
+            if(result0.next()){
+          String IdSiniestro =  result0.getString("IdSiniestro");
+         
+            connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
+            sql = connectionBD.createStatement();
+            int result4 = sql.executeUpdate("delete from archivos  where idarchivo ='"+IdSiniestro+"'") ;
+          if(result4==1){
+              
+          
+          
+        
             connectionBD = DriverManager.getConnection("jdbc:mysql://localhost/proyecto","root","n0m3l0");
             sql = connectionBD.createStatement();
             int result3 = sql.executeUpdate("delete from siniestro where correoU ='"+correo+"'") ;
@@ -61,7 +78,20 @@ public class Despidete_de_tu_cuenta extends HttpServlet {
              }
              }
              }
+            }
+            else{
+                 int result2 = sql.executeUpdate("delete from usuario where Compania ='"+compa+"'") ;
+        if(result2==1){
+                    int result = sql.executeUpdate("delete from codigo where Compania ='"+compa+"'") ; 
+                if(result==1){
+                    response.sendRedirect("http://localhost:8080/SYC/faces/principal.jsp");
+                }
+                
+            }
+        }
+        }
         else{
+               try (PrintWriter out = response.getWriter()) {
                response.setContentType("text/html");  
                out.println("<head>");
                 out.println("<link rel=\"stylesheet\" href=\"assets/css/main.css\" />");
@@ -77,12 +107,14 @@ public class Despidete_de_tu_cuenta extends HttpServlet {
 "},\n" +
 "\n" +
 "function () {\n" +
-"    window.location.href = 'registro.html';\n" +
+"    window.location.href = 'principal.jsp';\n" +
 "});"); 
 out.println("</script>"); 
           }
-          }
+          
         }
+    }
+
     
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

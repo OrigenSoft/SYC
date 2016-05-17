@@ -117,7 +117,7 @@ String tipos = (String)session.getAttribute("type");
 %>
 
 
-<h1>Datos del vehiculo</h1>
+<h1>Datos del Usuario</h1>
 <table>
     <tr>
         <td><font size="4"><b>ID </b></td>
@@ -143,7 +143,7 @@ String tipos = (String)session.getAttribute("type");
     <tr>
         <td><font size="4"><b>Codigo</b></td>
         <td><%=cod%></td></tr>
-    tr>
+    <tr>
         <td><font size="4"><b>tipo</b></td>
         <td><%=tipos%></td></tr>
 
@@ -151,6 +151,7 @@ String tipos = (String)session.getAttribute("type");
                 </center>
         </div>
         <form method="post" action="Despidete_de_tu_cuenta">
+             <input type="text" name="Codigo" id="Codigo" value="<%=tipos%>" style="visibility:hidden" readonly>
             <input type="submit" value="Darle ban al men">
         </form>
    </body>

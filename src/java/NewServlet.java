@@ -98,7 +98,7 @@ public class NewServlet extends HttpServlet {
 "},\n" +
 "\n" +
 "function () {\n" +
-"    window.location.href = 'Aconsulta.jsp';\n" +
+"    window.location.href = 'principal.jsp';\n" +
 "});"); 
 out.println("</script>"); 
           }
